@@ -1,0 +1,184 @@
+/* ── Meeting page: full-screen layout ── */
+.meeting-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+/* ── Top header bar ── */
+.meeting-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.2rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.meeting-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon-sm {
+  font-size: 1.4rem;
+}
+
+.meeting-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.meeting-header-center {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.room-badge {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+  letter-spacing: 0.04em;
+}
+
+.btn-copy {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-copy:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.meeting-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-log-toggle {
+  background: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-log-toggle:hover {
+  background: var(--color-secondary-hover);
+  color: var(--color-text);
+}
+
+.btn-leave {
+  background: var(--color-danger);
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-leave:hover {
+  background: var(--color-danger-hover);
+}
+
+/* ── Body: Jitsi iframe + optional log ── */
+.meeting-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Container for the Jitsi iframe – fills remaining space */
+.jitsi-container {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+/* ── Activity log sidebar ── */
+.event-log {
+  width: 280px;
+  flex-shrink: 0;
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.event-log-title {
+  padding: 0.85rem 1rem 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.event-log-empty {
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.event-log-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.5rem 0;
+}
+
+.event-log-item {
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid rgba(46, 50, 71, 0.5);
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.event-log-item:first-child {
+  color: var(--color-text);
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 600px) {
+  .event-log {
+    width: 220px;
+  }
+
+  .meeting-header-center {
+    display: none;
+  }
+}
