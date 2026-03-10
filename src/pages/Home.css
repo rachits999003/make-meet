@@ -11,6 +11,8 @@
     var(--color-bg);
 }
 
+
+
 /* ── Card container ── */
 .home-card {
   background: var(--color-surface);
